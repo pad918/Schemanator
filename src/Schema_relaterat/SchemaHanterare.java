@@ -7,7 +7,7 @@ package Schema_relaterat;
 public class SchemaHanterare {
     
     public SchemaHanterare(){
-    
+        //Här borde den gör NÅGOT MER
     }
     public void dö(){
         System.out.println("UPS... Han dogade");
