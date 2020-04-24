@@ -1,6 +1,8 @@
 package Schema_relaterat;
 
 import java.util.ArrayList;
+import java.io.FileWriter;
+import java.io.IOException;
 
 /**
  *
@@ -17,6 +19,27 @@ public class SchemaHanterare {
         händelser.add(new SchemaHändelse(new TidPunkt(2020,4,25,9,0),new TidPunkt(2020,4,25,11,0),
                 "Svenska", "GÖR KLART SVENSKAN NU VIGGO"));
     }
+    public void sparaSchema(){ // INTE KLAR
+        //Sparar schemat till en textfil med ett eget scripting språk
+        try {
+            FileWriter skrivare = new FileWriter("schemat1.txt");
+            // Kod för att skriva till filen
+            skrivare.write("# Skriven i Schema script v0_01");
+            for(int i=0; i<händelser.size(); i++){
+                //SKRIV IN ALL INFORMATION
+            }
+            skrivare.write("Det fungerererer typ !!! LULs");
+            //Stänger filen när den är klar
+            skrivare.close();
+            System.out.println("Skrev till filen");
+        } 
+        catch (IOException e) {
+            System.out.println("Ett fel uppstod");
+            e.printStackTrace();
+        }
+        
+    }
+    
     public void skrivUtAllaHändelser(){ // För debugging främst
         for(int i=0; i<händelser.size();i++){
             System.out.println("----------------------");

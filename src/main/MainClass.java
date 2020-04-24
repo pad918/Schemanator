@@ -71,7 +71,7 @@ public class MainClass extends javax.swing.JFrame {
         //Egen kod
         SchemaHanterare SH = new SchemaHanterare();
         SH.skrivUtAllaHändelser();
-        
+        SH.sparaSchema();
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
