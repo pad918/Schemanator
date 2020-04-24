@@ -69,14 +69,8 @@ public class MainClass extends javax.swing.JFrame {
         //</editor-fold>
         
         //Egen kod
-        Calendar calendar = Calendar.getInstance();
-        System.out.println(calendar.get(Calendar.YEAR));
-        TidPunkt st = new TidPunkt(2020,4,22,15,0);
-        TidPunkt sl = new TidPunkt(calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH)+1
-                ,calendar.get(Calendar.DATE),calendar.get(Calendar.HOUR),
-                calendar.get(Calendar.MINUTE));
-        SchemaHändelse SH = new SchemaHändelse(st, sl);
-        
+        SchemaHanterare SH = new SchemaHanterare();
+        SH.skrivUtAllaHändelser();
         
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {

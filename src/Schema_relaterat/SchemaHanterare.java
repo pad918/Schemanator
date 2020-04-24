@@ -1,13 +1,33 @@
 package Schema_relaterat;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Måns Abrahamsson
  */
 public class SchemaHanterare {
-    
+    ArrayList<SchemaHändelse> händelser = new ArrayList<SchemaHändelse>();
     public SchemaHanterare(){
-        //Här borde den gör NÅGOT MER
+        //Skapa exempel händelse Matte lektion 1
+        SchemaHändelse h1;
+        h1=new SchemaHändelse(new TidPunkt(2020,4,24,10,0),new TidPunkt(2020,4,24,11,0),
+                "Matte", "Läxhjälp med Viggo");
+        händelser.add(h1);
+        händelser.add(new SchemaHändelse(new TidPunkt(2020,4,25,9,0),new TidPunkt(2020,4,25,11,0),
+                "Svenska", "GÖR KLART SVENSKAN NU VIGGO"));
+    }
+    public void skrivUtAllaHändelser(){ // För debugging främst
+        for(int i=0; i<händelser.size();i++){
+            System.out.println("----------------------");
+            System.out.println(händelser.get(i).händelseNamn);
+            händelser.get(i).startTid.skrivTid();
+            System.out.println("och");
+            händelser.get(i).slutTid.skrivTid();
+            System.out.println("Beskrivning:");
+            System.out.println(händelser.get(i).händelseBeskrivning);
+        }
+        System.out.println("----------------------");
     }
     public void dö(){
         System.out.println("UPS... Han dogade");
