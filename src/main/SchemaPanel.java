@@ -1,16 +1,33 @@
 package main;
 
+import Schema_relaterat.SchemaFönster;
+import Schema_relaterat.SchemaHanterare;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JTable;
+
 /**
  *
  * @author mansa
  */
 public class SchemaPanel extends javax.swing.JPanel {
-
+    //Variabler här:
+    SchemaFönster SF;
+    SchemaHanterare SH;
+    int visadVecka=18;
     /**
      * Creates new form SchemaPanel
      */
     public SchemaPanel() {
+        //Schemarelaterat
+        SH = new SchemaHanterare();
+        SH.skrivUtAllaHändelser();
+        SH.sparaSchema();
+        //Grafik
         initComponents();
+        SF = new SchemaFönster(this);
     }
 
     /**

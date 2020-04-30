@@ -1,3 +1,13 @@
+/*
+REGLER:
+1. Pulla github när du loggar in
+    Detta görst genom TEAM -> REMOTE - > PULL
+2. EDITA INTE SAMMA DOKUMENT, STFAFF = DÖDEN
+3. PUSHA DITT ARBETE
+    Commita först genom att: PROJECTS -> Schemanator -> GIT -> COMMIT
+    Pusha sedan genom att: TEAM -> REMOTE -> PUSH
+    HOPPAS PÅ DET BÄSTA, LYCKA TILL
+*/
 package main;
 import Schema_relaterat.SchemaHanterare;
 import Schema_relaterat.SchemaHändelse;
@@ -17,22 +27,14 @@ import javax.swing.table.DefaultTableModel;
 public class MainClass extends javax.swing.JFrame {
     
     //Variabler här:
-    JTable[] dagsScheman = new JTable[7]; 
+     
     
     /**
      * Creates new form MainClass
      */
     public MainClass() {
         initComponents();
-        for(int i=0; i<7; i++){
-        String[] cNames= {"Test"};
-        Object[][] objs ={{"test1"},{"test2"}, {""},{"Matte lektion"}};
-        dagsScheman[i]= new JTable(objs, cNames);
-        dagsScheman[i].setRowHeight(3, 50);dagsScheman[i].setRowHeight(2, 60);
-        dagsScheman[i].setBounds(102*i,0,100,200);
-        schemaPanel1.add(dagsScheman[i]);
-        }
-        schemaPanel1.repaint();
+        
         /*TableMåndag.setValueAt("Matte 3c 10:30 \n 11:30", 0, 0);
         TableMåndag.setRowHeight(0, 50);
         TableMåndag.setRowHeight(1, 25);
@@ -107,10 +109,7 @@ public class MainClass extends javax.swing.JFrame {
         }
         //</editor-fold>
         
-        //Egen kod
-        SchemaHanterare SH = new SchemaHanterare();
-        SH.skrivUtAllaHändelser();
-        SH.sparaSchema();
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
