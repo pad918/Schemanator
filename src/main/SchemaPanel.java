@@ -24,10 +24,13 @@ public class SchemaPanel extends javax.swing.JPanel {
         //Schemarelaterat
         SH = new SchemaHanterare();
         SH.skrivUtAllaHändelser();
-        SH.sparaSchema();
+        //SH.sparaSchema();
+        SH.hämtaSchema();
+        SH.skrivUtAllaHändelser();
         //Grafik
         initComponents();
         SF = new SchemaFönster(this);
+        SF.UppDateraSchemat(this, SH.händelser);
     }
 
     /**
