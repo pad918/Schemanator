@@ -2,18 +2,42 @@ package main;
 import Schema_relaterat.SchemaHanterare;
 import Schema_relaterat.SchemaHändelse;
 import Schema_relaterat.TidPunkt;
+import java.awt.Button;
+import java.awt.Component;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 /**
  * @author Måns Abrahamsson and Viggo Kött
  */
 public class MainClass extends javax.swing.JFrame {
-
+    
+    //Variabler här:
+    JTable[] dagsScheman = new JTable[7]; 
+    
     /**
      * Creates new form MainClass
      */
     public MainClass() {
         initComponents();
+        for(int i=0; i<7; i++){
+        String[] cNames= {"Test"};
+        Object[][] objs ={{"test1"},{"test2"}, {""},{"Matte lektion"}};
+        dagsScheman[i]= new JTable(objs, cNames);
+        dagsScheman[i].setRowHeight(3, 50);dagsScheman[i].setRowHeight(2, 60);
+        dagsScheman[i].setBounds(102*i,0,100,200);
+        schemaPanel1.add(dagsScheman[i]);
+        }
+        schemaPanel1.repaint();
+        /*TableMåndag.setValueAt("Matte 3c 10:30 \n 11:30", 0, 0);
+        TableMåndag.setRowHeight(0, 50);
+        TableMåndag.setRowHeight(1, 25);
+        DefaultTableModel model = (DefaultTableModel)TableMåndag.getModel();
+        model.addRow(new Object[]{"Matte 4c! 12:30 13:30"});*/
     } // Faka you Månsineni neni
 
     /**
@@ -25,17 +49,32 @@ public class MainClass extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        schemaPanel1 = new main.SchemaPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        javax.swing.GroupLayout schemaPanel1Layout = new javax.swing.GroupLayout(schemaPanel1);
+        schemaPanel1.setLayout(schemaPanel1Layout);
+        schemaPanel1Layout.setHorizontalGroup(
+            schemaPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1080, Short.MAX_VALUE)
+        );
+        schemaPanel1Layout.setVerticalGroup(
+            schemaPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(schemaPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(schemaPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -81,5 +120,6 @@ public class MainClass extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private main.SchemaPanel schemaPanel1;
     // End of variables declaration//GEN-END:variables
 }
