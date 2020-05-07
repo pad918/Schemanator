@@ -189,7 +189,9 @@ public class FrameInloggning extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLoggaInActionPerformed
 
     private void lblGlömtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblGlömtMouseClicked
-        // TODO add your handling code here:
+             FrameGlömtLösenord nyttLösenord = new FrameGlömtLösenord(); // skapar frame där man kan ändra lösenord visas
+             nyttLösenord.setVisible(true); // glömt lösenord frame tas fram och syns
+             dispose(); // den här framen stängs ned
     }//GEN-LAST:event_lblGlömtMouseClicked
 
     private void lblRegristreraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblRegristreraMouseClicked
