@@ -16,10 +16,6 @@ public class TidPunkt {
         timme=timme_inp;
         minut=minut_inp;
     }
-
-    TidPunkt() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     public void skrivTid(){
         System.out.println(årtal + "/" + månad + "/" + dag + "  " + timme + ":" + minut);
     }

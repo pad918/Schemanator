@@ -23,3 +23,9 @@
 :N Matte NP
 :B GÖR KLART SVENSKAN NU VIGGO dumme fan
 :E
+:S
+:T1 2020 5 1 8 0
+:T2 2020 5 1 10 0
+:N Engelska NP
+:B nationella prov i engelska 6
+:E

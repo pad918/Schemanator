@@ -14,6 +14,7 @@ public class SchemaFönster {
     JTable[] dagsScheman = new JTable[7];
     ArrayList<JButton>[] Knappar = new ArrayList[7]; 
     public SchemaFönster(JPanel panel){
+        
         for (int i = 0; i < 7; i++) { Knappar[i] = new ArrayList<JButton>(); }
         SkapaRubriker();
         for(int i=0; i<7;i++){

@@ -77,6 +77,10 @@ public class SchemaHanterare {
         }
     }
     
+    public void läggTillHändelse(SchemaHändelse inHändelse){
+        händelser.add(inHändelse);
+    }
+    
     public void sparaSchema(){ // INTE KLAR
         //Sparar schemat till en textfil med ett eget scripting språk
         try {
@@ -134,9 +138,6 @@ public class SchemaHanterare {
             System.out.println(händelser.get(i).händelseBeskrivning);
         }
         System.out.println("----------------------");
-    }
-    public void dö(){
-        System.out.println("UPS... Han dogade");
     }
     
 }
