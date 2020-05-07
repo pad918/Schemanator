@@ -27,7 +27,7 @@ public class SchemaHanterare {
         BufferedReader reader;
         try {
             reader = new BufferedReader(new FileReader(
-                    "C:/Users/mansa/Documents/NetBeansProjects/Schemanator_1_01/schemat1.txt"));
+                    "schemat2.txt"));
             String line = reader.readLine();
             SchemaHändelse laddadHändelse = new SchemaHändelse(new TidPunkt(1337,1,1,1,0),
                            new TidPunkt(1337,1,1,2,0), "Namnlös", "");
@@ -80,7 +80,7 @@ public class SchemaHanterare {
     public void sparaSchema(){ // INTE KLAR
         //Sparar schemat till en textfil med ett eget scripting språk
         try {
-            FileWriter skrivare = new FileWriter("schemat1.txt");
+            FileWriter skrivare = new FileWriter("schemat2.txt");
             // Kod för att skriva till filen
             skrivare.write("# v0_01 Schemascript\n");
             //:S Start av ny händelse

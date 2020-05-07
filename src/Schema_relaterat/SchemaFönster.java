@@ -36,7 +36,8 @@ public class SchemaFönster {
                     händelser.get(i).startTid.dag);
             System.out.println("Tiden är = " + c.getTime());
             if(c.get(Calendar.WEEK_OF_YEAR)==visadVecka){
-                //RITA UT KNAPPEN FÖR HÄNDELSEN!
+                //RITA UT KNAPPEN FÖR HÄNDELSEN! INTE KLART!
+                
             }
         }        
         //Uppdatera den grafiska delen
