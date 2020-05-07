@@ -16,7 +16,6 @@ public class SchemaPanel extends javax.swing.JPanel {
     //Variabler här:
     SchemaFönster SF;
     SchemaHanterare SH;
-    int visadVecka=18;
     /**
      * Creates new form SchemaPanel
      */
@@ -42,19 +41,69 @@ public class SchemaPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnNästaVecka = new javax.swing.JButton();
+        btnFöregåendeVecka = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+
+        btnNästaVecka.setText("Nästa vecka");
+        btnNästaVecka.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNästaVeckaActionPerformed(evt);
+            }
+        });
+
+        btnFöregåendeVecka.setText("Föregående vecka");
+        btnFöregåendeVecka.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFöregåendeVeckaActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Vecka 18");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1080, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 848, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnNästaVecka, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnFöregåendeVecka, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(btnNästaVecka)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnFöregåendeVecka)))
+                .addGap(0, 452, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnNästaVeckaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNästaVeckaActionPerformed
+        // TODO add your handling code here:
+        SF.visadVecka++;
+        SF.UppDateraSchemat(this, SH.händelser);
+    }//GEN-LAST:event_btnNästaVeckaActionPerformed
+
+    private void btnFöregåendeVeckaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFöregåendeVeckaActionPerformed
+        // TODO add your handling code here:
+        SF.visadVecka--;
+        SF.UppDateraSchemat(this, SH.händelser);
+    }//GEN-LAST:event_btnFöregåendeVeckaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnFöregåendeVecka;
+    private javax.swing.JButton btnNästaVecka;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

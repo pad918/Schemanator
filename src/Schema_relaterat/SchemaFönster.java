@@ -25,9 +25,15 @@ public class SchemaFönster {
     }
     
     public void UppDateraSchemat(JPanel panel, ArrayList<SchemaHändelse> händelser){
+        for(int i=0; i<7;i++){
+            for(int j=0;j<Knappar[i].size();j++){
+                panel.remove(Knappar[i].get(j));
+            }
+        }
         for(int i=0; i<Knappar.length;i++){
             Knappar[i].clear();
         }
+        //Skapa rubrikerna / dagarna i schemat
         SkapaRubriker();
         //Rita in rätt schemahändelser
         for(int i=0; i<händelser.size();i++){
@@ -36,8 +42,18 @@ public class SchemaFönster {
                     händelser.get(i).startTid.dag);
             System.out.println("Tiden är = " + c.getTime());
             if(c.get(Calendar.WEEK_OF_YEAR)==visadVecka){
-                //RITA UT KNAPPEN FÖR HÄNDELSEN! INTE KLART!
-                
+                //RITA UT KNAPPEN FÖR HÄNDELSEN PÅ RÄTT DAG! INTE KLART!
+                int dag=c.get(Calendar.DAY_OF_WEEK)-2;
+                // 25px/h avstånd 
+                float händelseLängd=händelser.get(i).slutTid.timme-
+                        händelser.get(i).startTid.timme + ((händelser.get(i).slutTid.minut-
+                        händelser.get(i).startTid.minut)/60.0f); 
+                int pixelLängd =(int)(25*händelseLängd); 
+                int pixelStart = (int)(100+(25*(händelser.get(i).startTid.timme+
+                        (händelser.get(i).startTid.minut/60.0f)-6)));
+                JButton btnHändelse = new JButton(händelser.get(i).händelseNamn); 
+                btnHändelse.setBounds(100*(dag+1),pixelStart,100,pixelLängd);
+                Knappar[dag].add(btnHändelse);
             }
         }        
         //Uppdatera den grafiska delen
@@ -73,7 +89,7 @@ public class SchemaFönster {
         Knappar[5].add(btnLös);
         Knappar[6].add(btnSön);
         
-        for(int i=0; i<7; i++){
+        /*for(int i=0; i<7; i++){
              String[] cNames= {"Test"};
              Object[][] objs ={{"test1"},{"test2"}, {""},{"Matte lektion"}};
              dagsScheman[i]= new JTable(objs, cNames);
@@ -81,7 +97,7 @@ public class SchemaFönster {
              dagsScheman[i].setBounds(102*i,0,100,200);
              //panel.add(dagsScheman[i]);
              
-        }
+        }*/
         
     }
     
