@@ -39,12 +39,36 @@ public class SchemaFönster {
         //Rita in rätt schemahändelser
         for(int i=0; i<händelser.size();i++){
             Calendar c = Calendar.getInstance();
+            c.setFirstDayOfWeek(Calendar.MONDAY);
             c.set(händelser.get(i).startTid.årtal, händelser.get(i).startTid.månad-1, 
                     händelser.get(i).startTid.dag);
             System.out.println("Tiden är = " + c.getTime());
             if(c.get(Calendar.WEEK_OF_YEAR)==visadVecka){
                 //RITA UT KNAPPEN FÖR HÄNDELSEN PÅ RÄTT DAG! INTE KLART!
-                int dag=c.get(Calendar.DAY_OF_WEEK)-2;
+                int dag=c.get(Calendar.DAY_OF_WEEK); 
+                switch(dag){
+                    case 1:
+                        dag=6;
+                        break;
+                    case 2:
+                        dag=0;
+                        break;
+                    case 3:
+                        dag=1;
+                        break;
+                    case 4:
+                        dag=2;
+                        break;
+                    case 5:
+                        dag=3;
+                        break;
+                    case 6:
+                        dag=4;
+                        break;
+                    case 7:
+                        dag=5;
+                        break;
+                }
                 // 25px/h avstånd 
                 float händelseLängd=händelser.get(i).slutTid.timme-
                         händelser.get(i).startTid.timme + ((händelser.get(i).slutTid.minut-

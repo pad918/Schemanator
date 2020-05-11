@@ -22,12 +22,13 @@ public class SchemaHanterare {
         händelser.add(new SchemaHändelse(new TidPunkt(2020,4,25,9,0),new TidPunkt(2020,4,25,11,0),
                 "Svenska", "GÖR KLART SVENSKAN NU VIGGO"));
     }
-    public void hämtaSchema(){
+    public void hämtaSchema(String filPosition){
+        System.out.println("FILE = " + filPosition);
         händelser.clear();
         BufferedReader reader;
         try {
             reader = new BufferedReader(new FileReader(
-                    "schemat2.txt"));
+                    filPosition));
             String line = reader.readLine();
             SchemaHändelse laddadHändelse = new SchemaHändelse(new TidPunkt(1337,1,1,1,0),
                            new TidPunkt(1337,1,1,2,0), "Namnlös", "");
