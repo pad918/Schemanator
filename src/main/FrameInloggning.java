@@ -5,6 +5,8 @@
  */
 package main;
 
+import inloggning.InloggningsDatabas;
+
 /**
  *
  * @author Vicaos
@@ -176,8 +178,9 @@ public class FrameInloggning extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVisaActionPerformed
 
     private void btnLoggaInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoggaInActionPerformed
+        InloggningsDatabas ID = new InloggningsDatabas();
         // fixa in så att användarnamn stämmer överens med databasen istället visa eller dölj
-        if (VisaEllerDölj == 0){
+        if (ID.testaInlogging(txfUsername.getText(), txfPassword.getText())){
              MainClass schema = new MainClass(); // skapar frame där schemat visas
              schema.setVisible(true); // schema frame tas fram och syns
              dispose(); // den här framen stängs ned
