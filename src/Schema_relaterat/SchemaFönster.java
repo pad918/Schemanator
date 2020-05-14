@@ -57,7 +57,7 @@ public class SchemaFönster {
     public SchemaHändelse fåHändelse(JButton input){
         for(int i=0; i<7;i++){
             for(int j=0;j<Knappar[i].size();j++){
-                if(Knappar[i].get(j).equals(input)){
+                if(Knappar[i].get(j).button.equals(input)){
                     return Knappar[i].get(j).schemaHändelse;
                 }
             }

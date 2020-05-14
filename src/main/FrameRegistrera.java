@@ -203,7 +203,9 @@ public class FrameRegistrera extends javax.swing.JFrame {
                 inlogg.setVisible(true); // inloggning frame tas fram och syns
                 dispose(); // den här framen stängs ned
             } else{
-                // RITA UT ATT NGT ÄR FEL!
+                // RITA UT ATT NGT ÄR FEL med registreringen!
+                //SKRIV HÄR VIGGO!
+                
             }
         } catch (IOException ex) {
             Logger.getLogger(FrameRegistrera.class.getName()).log(Level.SEVERE, null, ex);

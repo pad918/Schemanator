@@ -418,9 +418,12 @@ public class SchemaPanel extends javax.swing.JPanel implements ActionListener {
         /*TidPunkt start = new TidPunkt
         sh = new SchemaHändelse(start, TidPunkt slut, String namn, String beskrivning); 
         */
+        if(SF.fåHändelse(button)!=null){
+            String a=SF.fåHändelse(button).händelseNamn;
+            System.out.println("Händelse= " + a);
+        }
         
         SH.händelser.remove(SF.fåHändelse(button));
-        System.out.println(label);
         System.out.println("BLEV KLICKAD");
         SF.UppDateraSchemat(this, SH.händelser);
     }  
