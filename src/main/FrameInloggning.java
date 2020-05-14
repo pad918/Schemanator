@@ -36,9 +36,9 @@ public class FrameInloggning extends javax.swing.JFrame {
         txfPassword = new javax.swing.JPasswordField();
         btnVisa = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        lblGlömt = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         lblRegristrera = new javax.swing.JLabel();
+        lblHoppaÖver = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -76,14 +76,6 @@ public class FrameInloggning extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("---------------------------      Eller     ---------------------------");
 
-        lblGlömt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblGlömt.setText("Glömt lösenordet?");
-        lblGlömt.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblGlömtMouseClicked(evt);
-            }
-        });
-
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel6.setText("Har du inget konto?");
 
@@ -92,6 +84,14 @@ public class FrameInloggning extends javax.swing.JFrame {
         lblRegristrera.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblRegristreraMouseClicked(evt);
+            }
+        });
+
+        lblHoppaÖver.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblHoppaÖver.setText("Fortsätt utan inloggning");
+        lblHoppaÖver.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblHoppaÖverMouseClicked(evt);
             }
         });
 
@@ -122,12 +122,14 @@ public class FrameInloggning extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnVisa, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblGlömt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(lblRegristrera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGap(0, 6, Short.MAX_VALUE)))
+                        .addGap(0, 6, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(lblHoppaÖver, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -148,13 +150,13 @@ public class FrameInloggning extends javax.swing.JFrame {
                 .addComponent(btnLoggaIn)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblGlömt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblRegristrera, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE))
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblRegristrera, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(lblHoppaÖver, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         pack();
@@ -191,17 +193,17 @@ public class FrameInloggning extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnLoggaInActionPerformed
 
-    private void lblGlömtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblGlömtMouseClicked
-             FrameGlömtLösenord nyttLösenord = new FrameGlömtLösenord(); // skapar frame där man kan ändra lösenord visas
-             nyttLösenord.setVisible(true); // glömt lösenord frame tas fram och syns
-             dispose(); // den här framen stängs ned
-    }//GEN-LAST:event_lblGlömtMouseClicked
-
     private void lblRegristreraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblRegristreraMouseClicked
              FrameRegistrera registrera = new FrameRegistrera(); // skapar frame där registrering körs visas
              registrera.setVisible(true); // registrering frame tas fram och syns
              dispose(); // den här framen stängs ned
     }//GEN-LAST:event_lblRegristreraMouseClicked
+
+    private void lblHoppaÖverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHoppaÖverMouseClicked
+             MainClass schema = new MainClass(1); // skapar frame där schemat visas
+             schema.setVisible(true); // schema frame tas fram och syns
+             dispose(); // den här framen stängs ned
+    }//GEN-LAST:event_lblHoppaÖverMouseClicked
 
     /**
      * @param args the command line arguments
@@ -246,7 +248,7 @@ public class FrameInloggning extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel lblGlömt;
+    private javax.swing.JLabel lblHoppaÖver;
     private javax.swing.JLabel lblRegristrera;
     private javax.swing.JPasswordField txfPassword;
     private javax.swing.JTextField txfUsername;
