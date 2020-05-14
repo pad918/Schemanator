@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
 import java.util.Calendar;
 import javax.swing.JFileChooser;
 import javax.swing.JTable;
@@ -38,8 +39,10 @@ public class SchemaPanel extends javax.swing.JPanel {
         initComponents();
         SF = new SchemaFönster(this);
         SF.UppDateraSchemat(this, SH.händelser);
-        //Sätt standarsvärden i textfield
+        //Visar nuvarande vecka när schemat öppnas
         Calendar c = Calendar.getInstance();
+        SF.visadVecka=c.get(Calendar.WEEK_OF_YEAR);
+        //Sätt standarsvärden i textfield
         tfÅr.setText(Integer.toString(c.get(Calendar.YEAR)));
         tfMånad.setText(Integer.toString(c.get(Calendar.MONTH)+1));
         tfDag.setText(Integer.toString(c.get(Calendar.DAY_OF_MONTH)));
@@ -325,7 +328,19 @@ public class SchemaPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnSkapaHändelseActionPerformed
 
     private void btnSparaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSparaActionPerformed
-        SH.sparaSchema();
+        
+        String path="";
+        JFileChooser väljare = new JFileChooser();
+        väljare.setDialogTitle("Välj var schemat ska sparas");
+        väljare.setCurrentDirectory(new java.io.File("."));
+        int userSelection = väljare.showSaveDialog(this);
+ 
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
+             File fileToSave = väljare.getSelectedFile();
+            System.out.println("Filen sparades: " + fileToSave.getAbsolutePath());
+            SH.sparaSchema(fileToSave.getAbsolutePath());
+        }
+        
     }//GEN-LAST:event_btnSparaActionPerformed
 
     private void btnLaddaSchemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLaddaSchemaActionPerformed

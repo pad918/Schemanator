@@ -82,10 +82,10 @@ public class SchemaHanterare {
         händelser.add(inHändelse);
     }
     
-    public void sparaSchema(){ // INTE KLAR
+    public void sparaSchema(String path){ // INTE KLAR
         //Sparar schemat till en textfil med ett eget scripting språk
         try {
-            FileWriter skrivare = new FileWriter("schemat2.txt");
+            FileWriter skrivare = new FileWriter(path); //
             // Kod för att skriva till filen
             skrivare.write("# v0_01 Schemascript\n");
             //:S Start av ny händelse
