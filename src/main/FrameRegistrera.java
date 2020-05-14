@@ -5,6 +5,7 @@
  */
 package main;
 
+import inloggning.FrameRegistreringsfel;
 import inloggning.InloggningsDatabas;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -203,8 +204,8 @@ public class FrameRegistrera extends javax.swing.JFrame {
                 inlogg.setVisible(true); // inloggning frame tas fram och syns
                 dispose(); // den här framen stängs ned
             } else{
-                // RITA UT ATT NGT ÄR FEL med registreringen!
-                //SKRIV HÄR VIGGO!
+                 FrameRegistreringsfel RegiFel = new FrameRegistreringsfel(); // skapar frame där registreringsfel visas
+                 RegiFel.setVisible(true); // registreringsfel frame tas fram och syns
                 
             }
         } catch (IOException ex) {
