@@ -358,10 +358,12 @@ public class SchemaPanel extends javax.swing.JPanel {
             System.out.println("getSelectedFile() : " 
          +  väljare.getSelectedFile());
             filPosition=väljare.getSelectedFile().toString();
+            SH.hämtaSchema(filPosition);
+            //SH.skrivUtAllaHändelser();
+            SF.UppDateraSchemat(this, SH.händelser);
         }
-        SH.hämtaSchema(filPosition);
-        //SH.skrivUtAllaHändelser();
-        SF.UppDateraSchemat(this, SH.händelser);
+        
+        
     }//GEN-LAST:event_btnLaddaSchemaActionPerformed
     private int stringTillInt(String input){
         int output=0;
