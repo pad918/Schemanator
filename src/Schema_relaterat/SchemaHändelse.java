@@ -17,6 +17,10 @@ public class SchemaHändelse {
         händelseNamn=namn;
         händelseBeskrivning=beskrivning;
     }
+
+    SchemaHändelse() {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     public boolean ärGiltig(){
         if(startTid.årtal<1900 || slutTid.årtal<1900){
             return false;

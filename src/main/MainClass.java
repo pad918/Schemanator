@@ -32,8 +32,14 @@ public class MainClass extends javax.swing.JFrame {
     /**
      * Creates new form MainClass
      */
-    public MainClass() {
+    public MainClass(int a) {
         initComponents();
+        if(a==0){
+            FrameInloggning inlogg = new FrameInloggning(); // skapar frame där schemat visas
+            inlogg.setVisible(true); // schema frame tas fram och syns
+            dispose(); // den här framen stängs ned
+        }
+        
         
         /*TableMåndag.setValueAt("Matte 3c 10:30 \n 11:30", 0, 0);
         TableMåndag.setRowHeight(0, 50);
@@ -51,23 +57,22 @@ public class MainClass extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        schemaPanel2 = new main.SchemaPanel();
+        schemaPanel1 = new main.SchemaPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(schemaPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1078, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 10, Short.MAX_VALUE))
+            .addComponent(schemaPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(schemaPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(schemaPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -104,12 +109,12 @@ public class MainClass extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainClass().setVisible(true);
+                new MainClass(0).setVisible(false);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private main.SchemaPanel schemaPanel2;
+    private main.SchemaPanel schemaPanel1;
     // End of variables declaration//GEN-END:variables
 }

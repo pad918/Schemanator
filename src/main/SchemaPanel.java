@@ -4,12 +4,14 @@ import Schema_relaterat.SchemaFönster;
 import Schema_relaterat.SchemaHanterare;
 import Schema_relaterat.SchemaHändelse;
 import Schema_relaterat.TidPunkt;
+import java.awt.MenuComponent;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
 import java.util.Calendar;
+import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JTable;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -18,7 +20,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  *
  * @author mansa
  */
-public class SchemaPanel extends javax.swing.JPanel {
+public class SchemaPanel extends javax.swing.JPanel implements ActionListener {
     //Variabler här:
     SchemaFönster SF;
     SchemaHanterare SH;
@@ -38,7 +40,7 @@ public class SchemaPanel extends javax.swing.JPanel {
         //Grafik
         initComponents();
         SF = new SchemaFönster(this);
-        SF.UppDateraSchemat(this, SH.händelser);
+        
         //Visar nuvarande vecka när schemat öppnas
         Calendar c = Calendar.getInstance();
         SF.visadVecka=c.get(Calendar.WEEK_OF_YEAR);
@@ -47,6 +49,9 @@ public class SchemaPanel extends javax.swing.JPanel {
         tfMånad.setText(Integer.toString(c.get(Calendar.MONTH)+1));
         tfDag.setText(Integer.toString(c.get(Calendar.DAY_OF_MONTH)));
         lbVecka.setText("Vecka " + Integer.toString(SF.visadVecka));
+        //Uppdaterar grafiken på skärmen
+        SF.UppDateraSchemat(this, SH.händelser);
+
     }
 
     /**
@@ -405,4 +410,19 @@ public class SchemaPanel extends javax.swing.JPanel {
     private javax.swing.JTextField tfTitel;
     private javax.swing.JTextField tfÅr;
     // End of variables declaration//GEN-END:variables
+    @Override
+    public void actionPerformed(ActionEvent e){  
+        JButton button = (JButton)e.getSource();
+        String label = button.getLabel(); //Deprecated 
+        SchemaHändelse sh;
+        /*TidPunkt start = new TidPunkt
+        sh = new SchemaHändelse(start, TidPunkt slut, String namn, String beskrivning); 
+        */
+        
+        SH.händelser.remove(SF.fåHändelse(button));
+        System.out.println(label);
+        System.out.println("BLEV KLICKAD");
+        SF.UppDateraSchemat(this, SH.händelser);
+    }  
+
 }
