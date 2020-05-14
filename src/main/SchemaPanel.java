@@ -35,7 +35,7 @@ public class SchemaPanel extends javax.swing.JPanel implements ActionListener {
         SH.skrivUtAllaHändelser();
         //SH.sparaSchema();
         
-        SH.hämtaSchema("schemat2.txt");
+        SH.hämtaSchema("exempelSchema.txt");
         SH.skrivUtAllaHändelser();
         //Grafik
         initComponents();

@@ -1,0 +1,73 @@
+# v0_01 Schemascript
+:S
+:T1 2020 5 14 14 35
+:T2 2020 5 14 17 5
+:N Programmering
+:B 
+:E
+:S
+:T1 2020 5 15 8 30
+:T2 2020 5 15 9 45
+:N Teknik
+:B javier
+:E
+:S
+:T1 2020 5 15 10 10
+:T2 2020 5 15 11 25
+:N Matte 4
+:B javier
+:E
+:S
+:T1 2020 5 15 12 10
+:T2 2020 5 15 13 25
+:N Svenska 2
+:B Micke
+:E
+:S
+:T1 2020 5 18 9 55
+:T2 2020 5 18 11 20
+:N Fysik
+:B marilla
+:E
+:S
+:T1 2020 5 18 13 15
+:T2 2020 5 18 14 30
+:N Matte 4
+:B marilla
+:E
+:S
+:T1 2020 5 19 8 30
+:T2 2020 5 19 9 45
+:N Entreprenörskap
+:B marilla
+:E
+:S
+:T1 2020 5 19 10 15
+:T2 2020 5 19 11 55
+:N Fysik
+:B marilla
+:E
+:S
+:T1 2020 5 19 12 45
+:T2 2020 5 19 14 0
+:N Idrott
+:B marilla
+:E
+:S
+:T1 2020 5 19 14 34
+:T2 2020 5 19 15 50
+:N Matte 4
+:B marilla
+:E
+:S
+:T1 2020 5 20 9 0
+:T2 2020 5 20 14 0
+:N Matte prov
+:B marilla
+:E
+:S
+:T1 2020 5 20 14 45
+:T2 2020 5 20 15 0
+:N fysik
+:B marilla
+:E
