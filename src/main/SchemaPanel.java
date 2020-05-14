@@ -44,6 +44,7 @@ public class SchemaPanel extends javax.swing.JPanel implements ActionListener {
         //Visar nuvarande vecka när schemat öppnas
         Calendar c = Calendar.getInstance();
         SF.visadVecka=c.get(Calendar.WEEK_OF_YEAR);
+        SF.visatÅr=c.get(Calendar.YEAR);
         //Sätt standarsvärden i textfield
         tfÅr.setText(Integer.toString(c.get(Calendar.YEAR)));
         tfMånad.setText(Integer.toString(c.get(Calendar.MONTH)+1));
@@ -90,6 +91,7 @@ public class SchemaPanel extends javax.swing.JPanel implements ActionListener {
         jLabel12 = new javax.swing.JLabel();
         btnSpara = new javax.swing.JButton();
         btnLaddaSchema = new javax.swing.JButton();
+        lblÅr = new javax.swing.JLabel();
 
         btnNästaVecka.setText("Nästa vecka");
         btnNästaVecka.addActionListener(new java.awt.event.ActionListener() {
@@ -169,6 +171,10 @@ public class SchemaPanel extends javax.swing.JPanel implements ActionListener {
             }
         });
 
+        lblÅr.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblÅr.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblÅr.setText("2020");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -187,7 +193,9 @@ public class SchemaPanel extends javax.swing.JPanel implements ActionListener {
                                 .addComponent(tfÅr, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(2, 2, 2))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(lbVecka, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblÅr, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lbVecka, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnNästaVecka, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -213,38 +221,38 @@ public class SchemaPanel extends javax.swing.JPanel implements ActionListener {
                                 .addComponent(jLabel7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(tfStartTidMinut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(btnSkapaHändelse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfSlutTidTimme, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(58, 58, 58)
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfSlutTidMinut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfTitel))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel12)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfBeskrivning))))
+                    .addComponent(btnSkapaHändelse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel11)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(tfTitel))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel12)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(tfBeskrivning, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)))
                     .addComponent(btnSpara, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnLaddaSchema, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(btnLaddaSchema, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tfSlutTidTimme, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(58, 58, 58)
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tfSlutTidMinut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(lbVecka, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(btnNästaVecka)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnFöregåendeVecka)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnNästaVecka, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lbVecka, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnFöregåendeVecka)
+                    .addComponent(lblÅr, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -293,15 +301,25 @@ public class SchemaPanel extends javax.swing.JPanel implements ActionListener {
     private void btnNästaVeckaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNästaVeckaActionPerformed
         // TODO add your handling code here:
         SF.visadVecka++;
+        if(SF.visadVecka>52){
+            SF.visadVecka=1;
+            SF.visatÅr++;
+        }
         SF.UppDateraSchemat(this, SH.händelser);
         lbVecka.setText("Vecka " + Integer.toString(SF.visadVecka));
+        lblÅr.setText(Integer.toString(SF.visatÅr));
     }//GEN-LAST:event_btnNästaVeckaActionPerformed
 
     private void btnFöregåendeVeckaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFöregåendeVeckaActionPerformed
         // TODO add your handling code here:
         SF.visadVecka--;
+        if(SF.visadVecka<1){
+            SF.visadVecka=52;
+            SF.visatÅr--;
+        }
         SF.UppDateraSchemat(this, SH.händelser);
         lbVecka.setText("Vecka " + Integer.toString(SF.visadVecka));
+        lblÅr.setText(Integer.toString(SF.visatÅr));
     }//GEN-LAST:event_btnFöregåendeVeckaActionPerformed
 
     private void tfÅrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfÅrActionPerformed
@@ -400,6 +418,7 @@ public class SchemaPanel extends javax.swing.JPanel implements ActionListener {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel lbVecka;
+    private javax.swing.JLabel lblÅr;
     private javax.swing.JTextField tfBeskrivning;
     private javax.swing.JTextField tfDag;
     private javax.swing.JTextField tfMånad;

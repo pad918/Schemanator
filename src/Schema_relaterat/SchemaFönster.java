@@ -13,6 +13,7 @@ import javax.swing.JLabel;
  */
 public class SchemaFönster {
     public int visadVecka=18;
+    public int visatÅr=2020;
     //ArrayList<JButton>[] Knappar = new ArrayList[7]; //KnappHändelse
     ArrayList<KnappHändelse>[] Knappar = new ArrayList[7];
     public SchemaFönster(JPanel panel){
@@ -85,7 +86,7 @@ public class SchemaFönster {
             c.set(händelser.get(i).startTid.årtal, händelser.get(i).startTid.månad-1, 
                     händelser.get(i).startTid.dag);
             System.out.println("Tiden är = " + c.getTime());
-            if(c.get(Calendar.WEEK_OF_YEAR)==visadVecka){
+            if(c.get(Calendar.WEEK_OF_YEAR)==visadVecka && c.get(Calendar.YEAR)==visatÅr){
                 //RITA UT KNAPPEN FÖR HÄNDELSEN PÅ RÄTT DAG! INTE KLART!
                 int dag=c.get(Calendar.DAY_OF_WEEK); 
                 switch(dag){
